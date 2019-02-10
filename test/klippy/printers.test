@@ -6,10 +6,13 @@ DICTIONARY atmega2560-16mhz.dict
 CONFIG ../../config/example.cfg
 CONFIG ../../config/example-corexy.cfg
 CONFIG ../../config/example-delta.cfg
+CONFIG ../../config/example-winch.cfg
 
 # Printers using the atmega2560
 DICTIONARY atmega2560-16mhz.dict
 CONFIG ../../config/generic-einsy-rambo.cfg
+CONFIG ../../config/generic-fysetc-f6.cfg
+CONFIG ../../config/generic-gt2560.cfg
 CONFIG ../../config/generic-mini-rambo.cfg
 CONFIG ../../config/generic-rambo.cfg
 CONFIG ../../config/generic-ramps.cfg
@@ -27,6 +30,10 @@ CONFIG ../../config/printer-seemecnc-rostock-max-v2-2015.cfg
 CONFIG ../../config/printer-velleman-k8200-2013.cfg
 CONFIG ../../config/printer-wanhao-duplicator-i3-plus-2017.cfg
 CONFIG ../../config/printer-wanhao-duplicator-6-2016.cfg
+
+# Printers using the atmega1280
+DICTIONARY atmega1280.dict
+CONFIG ../../config/generic-minitronics1.cfg
 
 # Printers using the atmega1284p
 DICTIONARY atmega1284p.dict
@@ -55,8 +62,10 @@ CONFIG ../../config/generic-duet2.cfg
 
 # Printers using the lpc176x
 DICTIONARY lpc176x.dict
+CONFIG ../../config/generic-bigtreetech-skr-v1.1.cfg
 CONFIG ../../config/generic-re-arm.cfg
 CONFIG ../../config/generic-smoothieboard.cfg
+CONFIG ../../config/generic-azteeg-x5-mini-v3.cfg
 
 # Printers using the PRU
 DICTIONARY pru.dict host=linuxprocess.dict

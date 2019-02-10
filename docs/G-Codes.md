@@ -162,6 +162,8 @@ enabled:
   BLTouch. It may be useful for debugging. Available commands are:
   pin_down, touch_mode, pin_up, self_test, reset.
 
+See [Working with the BL-Touch](BLTouch.md) for more details.
+
 ## Delta Calibration
 
 The following commands are available when the "delta_calibrate" config
@@ -274,3 +276,29 @@ section is enabled:
   may lead to internal software errors. This command may invalidate
   future boundary checks; issue a G28 afterwards to reset the
   kinematics.
+
+## Send message (respond) to host
+
+The following commands are availabe when the "respond" config section is
+enabled.
+  - `M118 <message>`: echo the message prepended with the configured default
+    prefix (or `echo: ` if no prefix is configured).
+  - `RESPOND MSG="<message>"`: echo the message prepended with the configured default
+    prefix (or `echo: ` if no prefix is configured).
+  - `RESPOND TYPE=echo MSG="<message>"`: echo the message prepended with `echo: `.
+  - `RESPOND TYPE=command MSG="<message>"`: echo the message prepended with `// `.
+    Octopint can be configured to respond to these messages (e.g.
+    `RESPOND TYPE=command MSG=action:pause`).
+  - `RESPOND TYPE=error MSG="<message>"`: echo the message prepended with `!! `.
+  - `RESPOND PREFIX=<prefix> MSG="<message>"`: echo the message prepended with `<prefix>`
+    (The `PREFIX` parameter will take priority over the `TYPE` parameter)
+
+## Pause Resume
+
+The following commands are available when the "pause_resume" config section
+is enabled:
+  - `PAUSE`:  Pauses the current print.  The current position is captured for
+  restoration upon resume.
+  - `RESUME [VELOCITY=<value>]`: Resumes the print from a pause, first restoring
+  the previously captured position.  The VELOCITY parameter determines the speed
+  at which the tool should return to the original captured position.
